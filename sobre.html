@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/carrinho.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <div class="leftmenu">
+                <div class="logo">
+                    <img src="img/rpavan2.svg">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="perfumaria.html">Perfumaria</a></li>
+                        <li><a href="aromas.html">Aromas</a></li>
+                        <li><a href="infantil.html">Infantil</a></li>
+                        <li><a href="masculino.html">Masculino</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="rightmenu">
+                <div class="pesquisa">
+                    <input name="busca" id="search" placeholder="buscar" onkeyup="buscarProduto()">
+                    <ul id="resultados"></ul>
+                </div>
+                <a href="carrinho.html" class="cart"><img src="img/sacola.svg"></a>
+                <div class="incon-avatar" onclick="abreomenu()">
+                    <img src="img/user.svg">
+                </div>
+                <div id="loginsubmenu" class="submenu"></div>
+            </div>
+        </div>
+        <div class="linha"></div>
+    </header>
+<main class="bruh">
+    <div class="container">
+        <div class="carrinho">
+            <h1>Sobre a Empresa R.Pavan</h1>
+            <h2>A R.Pavan é uma empresa de perfumaria e cosméticos com fabricação própria. Nela, são fabricados perfumes (adultos e infantis), essências, sabonetes e linhas de cuidados voltados para a beleza.</h2>
+
+            <h3>“Por trabalhar como diarista, atendendo de casa em casa, sempre tive sonhos e sempre tentava algo novo. Fiz cursos de flores, porcelana fria, cetim e meias de seda. Cheguei a fazer arranjos e vendi bastante.
+                Depois, montei um restaurante, que funcionou por 2 anos, mas não deu certo. Pedi a Deus para me dar inteligência e sabedoria, para que eu pudesse fazer algo e sair dessa vida de diarista. Foi então que surgiu a ideia: queria fazer algo que me fizesse feliz, e comecei a pensar nas coisas que gosto, como flores, velas, quadros ou perfumes, que sempre amei.
+                Foi ai que tomei a decisão. Senti que essa ideia tinha vindo de Deus, pois minha mente fluía a cada momento que pensava sobre isso. Fiz um mini curso, apenas para começar, porque sei que a criação vem com o tempo. Agora, com a ajuda de Deus, em um sonho, consegui abrir a minha loja.”</h3>
+        </div>
+</main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 Rpavan - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="https://vm.tiktok.com/ZMkLAYDFs/" target="_blank" class="social-icon">
+                    <img src="img/tik-tok.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/r.pavan57?igsh=NG83dTdnZG05eDlw" target="_blank" class="social-icon">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+                <a href="sobre.html">
+                    Sobre
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/validarToken.js"></script>
+    <script src='js/pesquisa.js'></script>
+</body>
+</html>

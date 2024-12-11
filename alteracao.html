@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alteração de produto</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+    <div class="pagina">
+        <div class="caixa">
+            <div class="caixadois">
+                <div class="caixatres">
+                    <h1>Buscar e Editar Produto</h1>
+
+                    <!-- Campo de busca -->
+                    <label for="buscaNome">Digite o nome do produto:</label>
+                    <input type="text" id="buscaNome" placeholder="Nome do produto">
+                    <button id="buscarProdutoBtn">Buscar</button>
+                
+                    <div id="mensagemBusca"></div> <!-- Mensagem de feedback da busca -->
+                
+                    <form id="formAtualizarProduto" style="display:none;">
+                        <input type="hidden" id="idproduto" name="idproduto">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required><br>
+                
+                        <label for="preco">Preço:</label>
+                        <input type="text" id="preco" name="preco" required><br>
+                
+                        <label for="descricao">Descrição:</label>
+                        <textarea id="descricao" name="descricao" required></textarea><br>
+                
+                        <label for="ingredientes">Ingredientes:</label>
+                        <textarea id="ingredientes" name="ingredientes" required></textarea><br>
+                
+                        <label for="usar">Modo de Usar:</label>
+                        <textarea id="usar" name="usar" required></textarea><br>
+                
+                        <label for="ocasiao">Ocasiao:</label>
+                        <textarea id="ocasiao" name="ocasiao" required></textarea><br>
+                
+                        <label for="idcategoria">Categoria:</label>
+                        <select id="categoria" name="categoria" required></select><br>
+                        <img id="imagemProduto" src="" alt="Imagem do Produto" style="max-width: 200px; max-height: 200px;">
+                        <input type="file" id="imagem" name="imagem" />
+                        <button type="submit" id="btnAtualizarProduto">Atualizar Produto</button>
+                        <button id="deletarproduto">Excluir produto</button>
+                    </form>
+                    <div id="resultado"></div>
+                    <script src="js/alteracao.js"></script>
+                    <script src="js/inseredados.js"></script>
+                    <script src="js/exclusão.js"></script>  
+                    <script src="js/validarTipo.js"></script>
+                </div>
+            </div>
+        </div>
+        <button class="sair"><a href="index.html">Pagina inicial</a></button>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 Rpavan - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

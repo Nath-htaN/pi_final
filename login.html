@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+    <div class="pagina">
+        <div class="caixa">
+            <div class="caixadois">
+                <div class="caixatres">
+                    <h2>Login</h2>
+                    <form id="formlogin">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required> <br><br>
+                        
+                        <label for="senha">Senha:</label>
+                        <input type="password" name="senha" id="senha"><br><br>
+                        <a href="cadastrousu.html">Criar conta</a>
+                        <button type="button" onclick="Logar()">Entrar</button>
+                    </form>
+                    <div id="mensagem"></div>
+                    <script src="js/login.js"></script>
+                </div>
+            </div>
+        </div>
+        <button class="sair"><a href="index.html">Pagina inicial</a></button>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 Rpavan - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="https://vm.tiktok.com/ZMkLAYDFs/" target="_blank" class="social-icon">
+                    <img src="img/tik-tok.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/r.pavan57?igsh=NG83dTdnZG05eDlw" target="_blank" class="social-icon">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+                <a href="sobre.html">
+                    Sobre
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
