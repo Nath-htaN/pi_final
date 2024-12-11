@@ -1,0 +1,455 @@
+@font-face {
+    font-family: 'Champagne';
+    src: url(font/Champagne\ &\ Limousines.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Chocolates';
+    src: url(font/TT\ Chocolates\ Trial\ Regular.otf) format('truetype');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chocolates', Helvetica, sans-serif;
+}
+header{
+    display: flex;
+    flex-direction: column;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 85px;
+}
+.leftmenu{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 30px;
+}
+nav ul li a{
+    font-family: 'Champagne', Helvetica, sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+    color:gray;
+}
+.logo{
+    width: 120px;
+}
+.logo img{
+    width: 100%;
+}
+.pesquisa {
+    position: relative;
+    width: 300px;
+    margin: 50px auto;
+}
+#search {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#resultados {
+    position: absolute; /* Faz com que os resultados fiquem abaixo do campo de pesquisa */
+    top: 100%; /* Posiciona imediatamente abaixo do campo de pesquisa */
+    left: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 10;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+#resultados li {
+    display: flex;
+    flex-direction: center;
+    padding: 8px;
+    cursor: pointer;
+}
+#resultados li .texto {
+    display: flex;
+    flex-direction: column;   
+}
+
+#resultados li .preco {
+    margin-top: 5px;
+}
+#resultados li .h4{
+    margin: 0;
+}
+#resultados img {
+    width: 36px;
+    margin-right: 10px;
+}
+.rightmenu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.incon-avatar{
+    border: 2px;
+    border-radius: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-self: space-evenly;
+    width: 50px;
+}
+.incon-avatar img{
+    width: 100%;
+    cursor: pointer;
+    display: inline-block;
+}
+.submenu{
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    width: 120px;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+    background-color: rgb(192, 192, 192);
+}
+.submenu a{
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 4px;
+    border-radius: 3px;
+    text-align: end;
+}
+.submenu a:hover {
+    background-color: #ddd;
+}
+.cart img{
+    width: 36px;
+}
+.linha{
+    height: 1px;
+    background-color: black;
+    width: 90%;
+    align-self: center;
+}
+.linha a{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);  /* Centraliza o link */
+    color: red;
+    font-weight: bold;
+}
+section {
+    background-color: #dcdcdc; /* Altere para a cor desejada */
+    width: 100%;
+    min-height: 100vh; /* Garante que ocupa a altura total da tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os elementos internos */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding dentro do tamanho total */
+}
+.pagina{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 85px);
+    gap: 90px;
+}
+.pagina {
+    position: relative; /* Define como referência para o H1 */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px; /* Espaçamento entre os elementos internos */
+}
+.banners {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.imagem1 {
+    display: flex; /* Alinha os elementos horizontalmente */
+    justify-content: space-between; /* Espaçamento automático entre as imagens */
+    gap: 20px; /* Espaçamento fixo entre as imagens */
+}
+
+.imagem1 img {
+    width: 200px; /* Define o tamanho das imagens (ajuste conforme necessário) */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 5px; /* Bordas arredondadas, opcional */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nas imagens, opcional */
+}
+.caixa {
+    position: relative; /* Define o contexto para o conteúdo dentro da caixa */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* O conteúdo da caixa ficará abaixo do H1 */
+}
+#grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+.item{
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 2px solid;
+    border-radius: 20px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.item img{
+    border: 2px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    height: 200px;
+    justify-content: space-evenly;
+    max-width: 300px;
+    gap:10px;
+    object-fit: contain;
+}
+.item img{
+    margin-top: 10px;
+    width: 100%;
+}
+.botao{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: gold;
+    padding: 5px 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.carrossel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carrossel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slide img {
+    width: 100%;
+    display: block;
+  }
+  
+  button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  button.prev {
+    left: 10px;
+  }
+  
+  button.next {
+    right: 10px;
+  }
+  
+  button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .footer {
+    background-color: #333; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px 0; /* Espaçamento superior e inferior */
+    font-family: Arial, sans-serif; /* Fonte do rodapé */
+}
+
+.footer-content {
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+    display: flex; /* Alinha os elementos em linha */
+    flex-direction: column; /* Alinha em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    gap: 15px; /* Espaçamento entre os elementos */
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+.social-links {
+    display: flex; /* Organiza os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre os ícones */
+    align-items: center; /* Centraliza os ícones verticalmente */
+}
+
+.social-icon img {
+    width: 30px; /* Ajusta o tamanho do ícone */
+    height: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transições para efeitos */
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+    filter: brightness(1.2); /* Clareia o ícone ao passar o mouse */
+}
+
+.social-links a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: #fff; /* Cor do texto do link "Sobre" */
+    font-size: 14px; /* Tamanho da fonte do link "Sobre" */
+    transition: color 0.3s ease; /* Transição suave */
+}
+
+.social-links a:hover {
+    color: gold; /* Muda para dourado ao passar o mouse */
+}
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .menu {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .leftmenu, .rightmenu {
+        gap: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #grid {
+        grid-template-columns: repeat(2, 1fr); /* Reduz de 4 para 2 colunas */
+    }
+
+    .item {
+        width: 100%; /* Aumenta a largura do item para ocupar a tela inteira */
+    }
+
+    .imagem-selecionada, .imagens {
+        max-width: 100%; /* As imagens vão ocupar toda a largura disponível */
+    }
+
+    .borda {
+        width: 100%; /* Tornar a borda mais responsiva */
+        height: auto;
+    }
+
+    .linha {
+        width: 80%; /* Ajusta a largura da linha para ficar mais proporcional em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        padding: 0 3%;
+    }
+
+    .leftmenu, .rightmenu {
+        gap: 10px;
+    }
+
+    #grid {
+        grid-template-columns: 1fr; /* Reduz para uma coluna em telas muito pequenas */
+    }
+
+    .item img {
+        max-width: 100%; /* Assegura que as imagens não ultrapassem a largura do item */
+    }
+
+    .botao {
+        padding: 5px 20px; /* Ajusta o tamanho do botão para dispositivos móveis */
+    }
+
+    .submenu {
+        width: 100%;
+        right: 0;
+        top: 50px;
+    }
+}
+
+/* Responsividade para telas muito pequenas (mobile) */
+@media (max-width: 480px) {
+    .menu {
+        padding: 0 2%;
+    }
+
+    .logo {
+        width: 100px; /* Ajusta o tamanho do logo para telas menores */
+    }
+
+    .pesquisa {
+        width: 250px; /* Ajusta a largura da barra de pesquisa */
+        margin: 20px auto;
+    }
+
+    .item {
+        margin: 10px 0; /* Dá espaçamento entre os itens na tela */
+    }
+
+    .caixadireita, .caixaesquerda {
+        width: 100%;
+    }
+
+    .borda {
+        height: auto;
+        width: 90%;
+    }
+
+    .quantidade {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .botao {
+        font-size: 14px; /* Aumenta o tamanho da fonte no botão para facilitar a leitura */
+    }
+}

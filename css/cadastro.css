@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pagina{
+    background-color: rgb(212, 212, 212);
+    display: flex;
+    flex-direction: column;  /* Organiza os itens verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;     /* Centraliza horizontalmente */
+    width: 100%;
+    height: 100vh;  /* A altura ocupa toda a tela */
+    gap: 20px;
+}
+
+.caixa{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 500px;
+    border: 2px solid #edc967;
+    border-radius: 10px;
+    box-shadow: 6px 6px 1px 2px rgb(0, 0, 0);
+}
+.caixadois{
+    display: flex;
+    justify-self: center;
+}
+.caixatres{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+}
+#produtoForm{
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    gap: 10px
+}
+#usuarioForm{
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    gap: 10px
+}
+#formlogin{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+}
+h2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label{
+    display: flex;
+    padding-top: 5px;
+}
+input{
+    border-radius: 5px;
+    color: black;
+    background-color: #c4b6a8;
+}
+textarea{
+    border-radius: 5px;
+    color: black;
+    background-color: #c4b6a8;
+}
+select{
+    border-radius: 5px;
+    color: black;
+    background-color: #c4b6a8;
+}
+button{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: #edc967;
+    padding: 5px 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 40px;
+    box-shadow: 4px 4px 1px 1px rgb(0, 0, 0);
+}
+button.sair {
+    background-color: #edc967;
+    padding: 10px 35px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px; /* Espaçamento entre a .caixa e o botão */
+    box-shadow: 4px 4px 1px 1px rgb(0, 0, 0);
+}
+.sair a{
+    text-decoration: none;
+    color: inherit; 
+}
+.footer {
+    background-color: #333; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px 0; /* Espaçamento superior e inferior */
+    font-family: Arial, sans-serif; /* Fonte do rodapé */
+}
+
+.footer-content {
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+    display: flex; /* Alinha os elementos em linha */
+    flex-direction: column; /* Alinha em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    gap: 15px; /* Espaçamento entre os elementos */
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+.social-links {
+    display: flex; /* Organiza os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre os ícones */
+    align-items: center; /* Centraliza os ícones verticalmente */
+}
+
+.social-icon img {
+    width: 30px; /* Ajusta o tamanho do ícone */
+    height: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transições para efeitos */
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+    filter: brightness(1.2); /* Clareia o ícone ao passar o mouse */
+}
+
+.social-links a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: #fff; /* Cor do texto do link "Sobre" */
+    font-size: 14px; /* Tamanho da fonte do link "Sobre" */
+    transition: color 0.3s ease; /* Transição suave */
+}
+
+.social-links a:hover {
+    color: gold; /* Muda para dourado ao passar o mouse */
+}
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .menu {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .leftmenu, .rightmenu {
+        gap: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #grid {
+        grid-template-columns: repeat(2, 1fr); /* Reduz de 4 para 2 colunas */
+    }
+
+    .item {
+        width: 100%; /* Aumenta a largura do item para ocupar a tela inteira */
+    }
+
+    .imagem-selecionada, .imagens {
+        max-width: 100%; /* As imagens vão ocupar toda a largura disponível */
+    }
+
+    .borda {
+        width: 100%; /* Tornar a borda mais responsiva */
+        height: auto;
+    }
+
+    .linha {
+        width: 80%; /* Ajusta a largura da linha para ficar mais proporcional em telas menores */
+    }
+}
+@media (max-width: 768px) {
+    .pagina {
+        gap: 15px;
+    }
+
+    .caixa {
+        width: 90%; /* Reduz a largura para se adaptar a telas menores */
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+
+    #formlogin {
+        width: 90%; /* Ajusta a largura do formulário */
+        margin-top: 50px;
+    }
+
+    button {
+        font-size: 14px; /* Aumenta o tamanho da fonte para dispositivos menores */
+        padding: 10px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .caixa {
+        width: 100%; /* Ocupa toda a largura da tela */
+        height: auto; /* Ajusta automaticamente a altura */
+        padding: 10px;
+    }
+
+    #formlogin {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 18px; /* Reduz o tamanho da fonte do título */
+    }
+
+    button {
+        font-size: 16px; /* Aumenta o tamanho da fonte */
+        padding: 12px 30px;
+    }
+}
