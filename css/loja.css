@@ -162,41 +162,40 @@ section {
 .pagina{
     background-color: white;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100vh - 85px);
     gap: 90px;
-}
-.pagina {
-    position: relative; /* Define como referência para o H1 */
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 20px; /* Espaçamento entre os elementos internos */
 }
 .banners {
     position: relative;
+    display: flex;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
-
 .imagem1 {
     display: flex; /* Alinha os elementos horizontalmente */
     justify-content: space-between; /* Espaçamento automático entre as imagens */
     gap: 20px; /* Espaçamento fixo entre as imagens */
 }
-
 .imagem1 img {
     width: 200px; /* Define o tamanho das imagens (ajuste conforme necessário) */
     height: auto; /* Mantém a proporção da imagem */
     border-radius: 5px; /* Bordas arredondadas, opcional */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra nas imagens, opcional */
+}
+.titulo-principal{
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin: 20px 0; /* Espaçamento acima e abaixo do título */
+    font-family: 'Chocolates', sans-serif;
+}
+.caixa {
+    box-sizing: border-box; /* Garante que padding não expanda a largura */
 }
 .caixa {
     position: relative; /* Define o contexto para o conteúdo dentro da caixa */
@@ -204,7 +203,7 @@ section {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1; /* O conteúdo da caixa ficará abaixo do H1 */
+    /* O conteúdo da caixa ficará abaixo do H1 */
 }
 #grid{
     display: grid;
