@@ -6,49 +6,71 @@
     font-family: 'Chocolates';
     src: url(font/TT\ Chocolates\ Trial\ Regular.otf) format('truetype');
 }
-*{
+/* Estilos gerais */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Chocolates', Helvetica, sans-serif;
 }
-header{
+
+header {
     display: flex;
     flex-direction: column;
 }
-.menu{
+
+/* Container do menu */
+.menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
     height: 85px;
+    position: relative; /* Para garantir que o menu fique sobre o conteúdo */
 }
-.leftmenu{
+/* Logo */
+.logo {
+    width: 120px;
+}
+.logo img {
+    width: 100%;
+}
+/* Hamburguer (só visível em telas menores) */
+.hamburger {
+    display: none; /* Esconde em telas grandes */
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px;
+}
+/* Menu esquerdo */
+.leftmenu {
     display: flex;
     align-items: center;
     gap: 50px;
 }
-nav ul li{
-    display: inline-block;
-    margin-right: 30px;
+
+/* Menu de navegação */
+nav ul {
+    display: flex; /* Exibe o menu horizontalmente em telas grandes */
+    gap: 30px;
+    list-style: none;
 }
-nav ul li a{
+
+nav ul li a {
     font-family: 'Champagne', Helvetica, sans-serif;
     font-size: 30px;
     text-decoration: none;
-    color:gray;
+    color: gray;
 }
-.logo{
-    width: 120px;
-}
-.logo img{
-    width: 100%;
-}
+
+/* Barra de pesquisa */
 .pesquisa {
     position: relative;
+    flex-grow: 1;
     width: 300px;
     margin: 50px auto;
 }
+
 #search {
     width: 100%;
     padding: 10px;
@@ -56,9 +78,11 @@ nav ul li a{
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+/* Resultados da pesquisa */
 #resultados {
-    position: absolute; /* Faz com que os resultados fiquem abaixo do campo de pesquisa */
-    top: 100%; /* Posiciona imediatamente abaixo do campo de pesquisa */
+    position: absolute;
+    top: 100%;
     left: 0;
     padding: 0;
     margin: 0;
@@ -71,46 +95,43 @@ nav ul li a{
     max-height: 200px;
     overflow-y: auto;
 }
+
 #resultados li {
     display: flex;
-    flex-direction: center;
+    flex-direction: column;
     padding: 8px;
     cursor: pointer;
 }
-#resultados li .texto {
-    display: flex;
-    flex-direction: column;   
-}
 
-#resultados li .preco {
-    margin-top: 5px;
-}
-#resultados li .h4{
-    margin: 0;
-}
-#resultados img {
-    width: 36px;
-    margin-right: 10px;
-}
-.rightmenu{
+/* Menu da direita (ícones de carrinho e usuário) */
+.rightmenu {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.incon-avatar{
-    border: 2px;
-    border-radius: 400px;
+
+/* Ícone de carrinho */
+.cart img {
+    width: 36px;
+}
+
+/* Ícone de usuário */
+.incon-avatar {
+    border: 2px solid transparent;
+    border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-self: space-evenly;
     width: 50px;
 }
-.incon-avatar img{
+
+.incon-avatar img {
     width: 100%;
     cursor: pointer;
-    display: inline-block;
 }
-.submenu{
+
+/* Submenu de usuário */
+.submenu {
     position: absolute;
     top: 70px;
     right: 70px;
@@ -119,8 +140,10 @@ nav ul li a{
     border-radius: 5px;
     display: none;
     background-color: rgb(192, 192, 192);
+    z-index: 10;
 }
-.submenu a{
+
+.submenu a {
     color: #333;
     text-decoration: none;
     display: block;
@@ -128,19 +151,20 @@ nav ul li a{
     border-radius: 3px;
     text-align: end;
 }
+
 .submenu a:hover {
     background-color: #ddd;
 }
-.cart img{
-    width: 36px;
-}
-.linha{
+
+/* Linha separadora */
+.linha {
     height: 1px;
     background-color: black;
     width: 90%;
     align-self: center;
 }
-.linha a{
+
+.linha a {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);  /* Centraliza o link */
@@ -160,15 +184,17 @@ section {
     box-sizing: border-box; /* Inclui padding dentro do tamanho total */
 }
 .pagina{
-    background-color: white;
+    max-width: 70%;
+    background-color: #f9f9f9;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 90px;
+    gap: 20px;
 }
 .banners {
+    margin-top: 20px;
     position: relative;
     display: flex;
     padding: 20px;
@@ -199,7 +225,6 @@ section {
 }
 .caixa {
     position: relative; /* Define o contexto para o conteúdo dentro da caixa */
-    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -210,12 +235,12 @@ section {
     grid-template-columns: repeat(4,1fr);
     grid-gap: 30px;
 }
-.item{
+.item {
     width: 160px;
     display: flex;
     flex-direction: column;
     position: relative;
-    border: 2px solid;
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Borda mais fina e suave */
     border-radius: 20px;
     background-color: white;
     justify-content: center;
@@ -351,104 +376,170 @@ section {
 .social-links a:hover {
     color: gold; /* Muda para dourado ao passar o mouse */
 }
-/* Responsividade para telas menores */
-@media (max-width: 1024px) {
-    .menu {
-        flex-direction: column;
-        height: auto;
+@media (min-width: 769px) {
+    /* Exibe o menu de navegação normal e esconde o hambúrguer */
+    .hamburger {
+        display: none;
     }
 
-    .leftmenu, .rightmenu {
+    .leftmenu {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    nav ul {
+        display: flex; /* Exibe o menu horizontalmente */
+        gap: 30px;
+        list-style: none;
+    }
+
+    .rightmenu {
+        display: flex;
+        align-items: center;
         gap: 20px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    #grid {
-        grid-template-columns: repeat(2, 1fr); /* Reduz de 4 para 2 colunas */
-    }
-
-    .item {
-        width: 100%; /* Aumenta a largura do item para ocupar a tela inteira */
-    }
-
-    .imagem-selecionada, .imagens {
-        max-width: 100%; /* As imagens vão ocupar toda a largura disponível */
-    }
-
-    .borda {
-        width: 100%; /* Tornar a borda mais responsiva */
-        height: auto;
-    }
-
-    .linha {
-        width: 80%; /* Ajusta a largura da linha para ficar mais proporcional em telas menores */
     }
 }
 
+/* Para telas menores que 768px */
 @media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-        padding: 0 3%;
+    section {
+        padding: 10px;  /* Reduz o padding */
+        gap: 15px;      /* Reduz o espaçamento entre os elementos */
     }
 
-    .leftmenu, .rightmenu {
-        gap: 10px;
+    .pagina {
+        max-width: 100%;  /* Ajusta a largura para 100% */
+        padding: 5px;  /* Adiciona um pequeno espaçamento */
+    }
+
+    /* Exibe o hambúrguer e esconde o menu normal */
+    .hamburger {
+        display: block; /* Exibe o botão hambúrguer */
+    }
+
+    .leftmenu {
+        display: none; /* Esconde o menu de navegação normal */
+    }
+
+    .rightmenu {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .pesquisa {
+        position: relative;
+        flex-grow: 1;
+        width: 100px;
+        margin: 50px auto;
+    }
+    /* Menu hamburguer exibido ao clicar */
+    .leftmenu.active {
+        margin-top: 86px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;  /* Largura do menu lateral */
+        height: 100vh;  /* Altura total da tela */
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        padding-top: 50px;
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+        list-style: none;
+    }
+
+    nav ul li {
+        margin-bottom: 20px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        color: gray;
+        padding: 10px;
+        display: block;
+    }
+
+    nav ul li a:hover {
+        background-color: #f0f0f0;
+    }
+    .pesquisa {
+        max-width: 100%;  /* Deixa o campo de pesquisa ocupar toda a largura da tela */
+        margin: 20px auto; /* Menos espaço nas margens */
+    }
+
+    #search {
+        font-size: 14px;  /* Ajusta o tamanho da fonte */
+        padding: 8px;  /* Menos padding */
+    }
+
+    #resultados {
+        max-height: 120px;  /* Reduz ainda mais a altura dos resultados */
+    }
+
+    #resultados li {
+        padding: 5px;  /* Reduz o padding dos itens */
+    }
+
+    #resultados li img {
+        width: 28px; /* Tamanho ainda menor da imagem */
+    }
+    .imagem1 {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 30px;
+    }
+
+    .imagem1 img {
+        width: 100%;  /* Faz as imagens ocuparem toda a largura */
+        max-width: 180px;  /* Limita o tamanho máximo */
+    }
+
+    .titulo-principal {
+        font-size: 1.5rem;  /* Reduz o tamanho do título */
     }
 
     #grid {
-        grid-template-columns: 1fr; /* Reduz para uma coluna em telas muito pequenas */
-    }
-
-    .item img {
-        max-width: 100%; /* Assegura que as imagens não ultrapassem a largura do item */
-    }
-
-    .botao {
-        padding: 5px 20px; /* Ajusta o tamanho do botão para dispositivos móveis */
-    }
-
-    .submenu {
-        width: 100%;
-        right: 0;
-        top: 50px;
-    }
-}
-
-/* Responsividade para telas muito pequenas (mobile) */
-@media (max-width: 480px) {
-    .menu {
-        padding: 0 2%;
-    }
-
-    .logo {
-        width: 100px; /* Ajusta o tamanho do logo para telas menores */
-    }
-
-    .pesquisa {
-        width: 250px; /* Ajusta a largura da barra de pesquisa */
-        margin: 20px auto;
+        grid-template-columns: repeat(2, 1fr);  /* 2 colunas em telas pequenas */
     }
 
     .item {
-        margin: 10px 0; /* Dá espaçamento entre os itens na tela */
+        width: 100%;  /* Garante que o item ocupe toda a largura disponível */
     }
 
-    .caixadireita, .caixaesquerda {
-        width: 100%;
+    .carrossel {
+        max-width: 100%;  /* Ajusta para 100% da largura */
     }
 
-    .borda {
-        height: auto;
-        width: 90%;
+    .slide img {
+        height: 200px;  /* Ajusta a altura das imagens */
+        object-fit: cover;  /* Ajusta para cobrir a área do carrossel */
     }
 
-    .quantidade {
-        width: 100%;
-        margin-top: 10px;
+    .footer-content {
+        padding: 10px;  /* Reduz o padding no conteúdo do rodapé */
+        align-items: center;  /* Centraliza os itens no rodapé */
     }
 
-    .botao {
-        font-size: 14px; /* Aumenta o tamanho da fonte no botão para facilitar a leitura */
+    .social-links {
+        flex-direction: column;  /* Coloca os ícones de redes sociais em coluna */
+        gap: 10px;  /* Ajusta o espaçamento entre os ícones */
+    }
+
+    .social-icon img {
+        width: 25px;  /* Reduz o tamanho dos ícones */
+        height: 25px;
+    }
+
+    .social-links a {
+        font-size: 12px;  /* Ajusta o tamanho da fonte */
     }
 }

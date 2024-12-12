@@ -15,26 +15,32 @@
     gap: 20px;
 }
 
-.caixa{
+.caixa {
     background-color: white;
     display: flex;
     justify-content: center;
-    width: 400px;
-    height: 500px;
+    width: 90%;  /* Ajusta a largura para telas menores */
+    max-width: 400px;  /* Limita a largura máxima para telas grandes */
+    height: auto;  /* Ajusta a altura automaticamente */
     border: 2px solid #edc967;
     border-radius: 10px;
     box-shadow: 6px 6px 1px 2px rgb(0, 0, 0);
+    padding: 20px;
+    margin: 0 auto;  /* Centraliza a caixa */
 }
-.caixadois{
+
+.caixadois {
     display: flex;
     justify-self: center;
 }
-.caixatres{
+
+.caixatres {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    max-height: 500px;
     height: 100%;
     padding: 20px;
     overflow-y: auto;

@@ -16,27 +16,47 @@ header{
     display: flex;
     flex-direction: column;
 }
-.menu{
+.menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
     height: 85px;
+    position: relative; /* Para garantir que o menu fique sobre o conteúdo */
 }
-.leftmenu{
+/* Logo */
+.logo {
+    width: 120px;
+}
+.logo img {
+    width: 100%;
+}
+/* Hamburguer (só visível em telas menores) */
+.hamburger {
+    display: none; /* Esconde em telas grandes */
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px;
+}
+/* Menu esquerdo */
+.leftmenu {
     display: flex;
     align-items: center;
     gap: 50px;
 }
-nav ul li{
-    display: inline-block;
-    margin-right: 30px;
+
+/* Menu de navegação */
+nav ul {
+    display: flex; /* Exibe o menu horizontalmente em telas grandes */
+    gap: 30px;
+    list-style: none;
 }
-nav ul li a{
+
+nav ul li a {
     font-family: 'Champagne', Helvetica, sans-serif;
     font-size: 30px;
     text-decoration: none;
-    color:gray;
+    color: gray;
 }
 .logo{
     width: 120px;
@@ -46,6 +66,7 @@ nav ul li a{
 }
 .pesquisa {
     position: relative;
+    flex-grow: 1;
     width: 300px;
     margin: 50px auto;
 }
@@ -136,7 +157,7 @@ nav ul li a{
 }
 .linha{
     height: 1px;
-    background-color: #edc967;
+    background-color: black;
     width: 90%;
     align-self: center;
 }
@@ -328,40 +349,113 @@ nav ul li a{
     color: gold; /* Muda para dourado ao passar o mouse */
 }
 /* Responsividade para telas menores */
-@media (max-width: 1024px) {
-    .menu {
-        flex-direction: column;
-        height: auto;
+@media (min-width: 769px) {
+    /* Exibe o menu de navegação normal e esconde o hambúrguer */
+    .hamburger {
+        display: none;
     }
 
-    .leftmenu, .rightmenu {
+    .leftmenu {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    nav ul {
+        display: flex; /* Exibe o menu horizontalmente */
+        gap: 30px;
+        list-style: none;
+    }
+
+    .rightmenu {
+        display: flex;
+        align-items: center;
         gap: 20px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    #grid {
-        grid-template-columns: repeat(2, 1fr); /* Reduz de 4 para 2 colunas */
-    }
-
-    .item {
-        width: 100%; /* Aumenta a largura do item para ocupar a tela inteira */
-    }
-
-    .imagem-selecionada, .imagens {
-        max-width: 100%; /* As imagens vão ocupar toda a largura disponível */
-    }
-
-    .borda {
-        width: 100%; /* Tornar a borda mais responsiva */
-        height: auto;
-    }
-
-    .linha {
-        width: 80%; /* Ajusta a largura da linha para ficar mais proporcional em telas menores */
     }
 }
+
 @media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Exibe o botão hambúrguer */
+    }
+
+    .leftmenu {
+        display: none; /* Esconde o menu de navegação normal */
+    }
+    .pesquisa {
+        position: relative;
+        flex-grow: 1;
+        width: 100px;
+        margin: 50px auto;
+    }
+
+    .rightmenu {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Menu hamburguer exibido ao clicar */
+    .leftmenu.active {
+        margin-top: 86px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;  /* Largura do menu lateral */
+        height: 100vh;  /* Altura total da tela */
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        padding-top: 50px;
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+        list-style: none;
+    }
+
+    nav ul li {
+        margin-bottom: 20px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        color: gray;
+        padding: 10px;
+        display: block;
+    }
+
+    nav ul li a:hover {
+        background-color: #f0f0f0;
+    }
+
+    .pesquisa {
+        max-width: 100%;  /* Deixa o campo de pesquisa ocupar toda a largura da tela */
+        margin: 20px auto; /* Menos espaço nas margens */
+    }
+
+    #search {
+        font-size: 14px;  /* Ajusta o tamanho da fonte */
+        padding: 8px;  /* Menos padding */
+    }
+
+    #resultados {
+        max-height: 120px;  /* Reduz ainda mais a altura dos resultados */
+    }
+
+    #resultados li {
+        padding: 5px;  /* Reduz o padding dos itens */
+    }
+
+    #resultados li img {
+        width: 28px; /* Tamanho ainda menor da imagem */
+    }
+    
     .pagina {
         gap: 20px; /* Ajusta o gap para telas menores */
     }
@@ -371,6 +465,7 @@ nav ul li a{
     }
 
     .imagem-selecionada {
+        margin-left: 20px;
         max-width: 80%; /* Ajusta o tamanho da imagem */
     }
 
@@ -392,42 +487,22 @@ nav ul li a{
         font-size: 14px; /* Aumenta o tamanho da fonte do botão */
         padding: 10px 30px;
     }
-}
-
-@media (max-width: 480px) {
-    .menu {
-        flex-direction: column; /* Organiza o menu verticalmente */
-        height: auto;
-        padding: 0 20px;
+    .footer-content {
+        padding: 10px;  /* Reduz o padding no conteúdo do rodapé */
+        align-items: center;  /* Centraliza os itens no rodapé */
     }
 
-    .leftmenu {
-        gap: 20px; /* Reduz o espaço entre os itens do menu */
+    .social-links {
+        flex-direction: column;  /* Coloca os ícones de redes sociais em coluna */
+        gap: 10px;  /* Ajusta o espaçamento entre os ícones */
     }
 
-    .pesquisa {
-        width: 90%; /* Aumenta a largura da barra de pesquisa */
+    .social-icon img {
+        width: 25px;  /* Reduz o tamanho dos ícones */
+        height: 25px;
     }
 
-    .caixaesquerda, .caixadireita {
-        width: 100%; /* Ocupa toda a largura da tela */
-    }
-
-    .borda {
-        width: 100%; /* Ajusta a borda para ocupar toda a tela */
-        height: auto; /* Deixa a altura ajustar automaticamente */
-    }
-
-    .imagem-selecionada {
-        max-width: 90%; /* Ajusta a largura da imagem selecionada */
-    }
-
-    .quantidade span {
-        font-size: 12px; /* Reduz o tamanho da fonte */
-    }
-
-    .botão {
-        font-size: 16px; /* Ajusta o tamanho do botão */
-        padding: 10px 30px;
+    .social-links a {
+        font-size: 12px;  /* Ajusta o tamanho da fonte */
     }
 }
