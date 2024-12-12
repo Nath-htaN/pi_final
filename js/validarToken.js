@@ -139,3 +139,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
 })
+function toggleMenu() {
+    const leftMenu = document.querySelector(".leftmenu");  // Seleciona o menu à esquerda
+    leftMenu.classList.toggle("active");  // Alterna a classe "active" no menu à esquerda
+
+    const hamburger = document.querySelector(".hamburger");
+    hamburger.classList.toggle("active");  // Opcional: Se você quiser que o hambúrguer tenha alguma animação
+}
